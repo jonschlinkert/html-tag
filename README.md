@@ -46,6 +46,7 @@ yields:
 ## License
 Copyright (c) 2014 Jon Schlinkert, contributors.  
 Copyright (c) 2012 [Tommy Chen](https://github.com/tommy351)
+
 Released under the MIT license
 
 ***
