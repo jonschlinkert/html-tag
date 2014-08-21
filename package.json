@@ -1,7 +1,7 @@
 {
   "name": "html-tag",
   "description": "Generate HTML tags from JSON.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "homepage": "https://github.com/jonschlinkert/html-tag",
   "author": {
     "name": "Jon Schlinkert",
@@ -21,13 +21,23 @@
     }
   ],
   "keywords": [
-    "docs",
-    "documentation",
+    "attr",
+    "attribute",
+    "attributes",
+    "create",
+    "ele",
+    "element",
+    "elements",
     "generate",
-    "generator",
-    "markdown",
-    "templates",
-    "verb"
+    "handlebars",
+    "helper",
+    "helpers",
+    "href",
+    "html",
+    "src",
+    "tag",
+    "template",
+    "url"
   ],
   "main": "index.js",
   "engines": {
