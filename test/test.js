@@ -21,3 +21,10 @@ describe('when no text is passed:', function () {
     expect(actual).to.eql('<img src="foo.jpg">');
   });
 });
+
+describe('when a boolean value is passed as the last arg:', function () {
+  it('should create an empty text node and a closing tag.', function () {
+    var actual = htmlTag('a', {href: 'foo.html'}, true);
+    expect(actual).to.eql('<a href="foo.html"></a>');
+  });
+});

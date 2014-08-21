@@ -1,7 +1,7 @@
 {
   "name": "html-tag",
   "description": "Generate HTML tags from JSON.",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "homepage": "https://github.com/jonschlinkert/html-tag",
   "author": {
     "name": "Jon Schlinkert",

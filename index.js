@@ -40,6 +40,11 @@ module.exports = function (tag, attrs, text) {
     if (attrs[i]) html += ' ' + i + '="' + attrs[i] + '"';
   }
 
+  if (typeof text === 'boolean') {
+    html += '></' + tag + '>';
+    return html;
+  }
+
   html += text ? '>' + text + '</' + tag + '>' : '>';
   return html;
 };
