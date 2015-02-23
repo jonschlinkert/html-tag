@@ -1,12 +1,17 @@
 /*!
  * html-tag <https://github.com/jonschlinkert/html-tag>
  *
- * Copyright (c) 2014 Jon Schlinkert, contributors.
- * Licensed under the MIT License
+ * Copyright (c) 2014-2015, Jon Schlinkert.
+ * Licensed under the MIT License.
  */
 
 'use strict';
 
+/**
+ * Expose `tag`
+ */
+
+module.exports = tag;
 
 /**
  * ## tag( name, attrs, text )
@@ -31,9 +36,10 @@
  * @param {Object} `attrs` Optional attributes
  * @param {String} `text` Optional text
  * @return {String} HTML
+ * @api public
  */
 
-module.exports = function (tag, attrs, text) {
+function tag(tag, attrs, text) {
   var html = '<' + tag;
 
   for (var i in attrs) {
@@ -47,4 +53,4 @@ module.exports = function (tag, attrs, text) {
 
   html += text ? '>' + text + '</' + tag + '>' : '>';
   return html;
-};
+}

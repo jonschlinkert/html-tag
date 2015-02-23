@@ -1,25 +1,31 @@
 {
   "name": "html-tag",
   "description": "Generate HTML tags from JSON.",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "homepage": "https://github.com/jonschlinkert/html-tag",
   "author": {
     "name": "Jon Schlinkert",
     "url": "https://github.com/jonschlinkert"
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/jonschlinkert/html-tag.git"
-  },
+  "repository": "jonschlinkert/html-tag",
   "bugs": {
     "url": "https://github.com/jonschlinkert/html-tag/issues"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/jonschlinkert/html-tag/blob/master/LICENSE-MIT"
-    }
+  "license": "MIT",
+  "files": [
+    "index.js"
   ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "chai": "~1.9.1",
+    "mocha": "*"
+  },
   "keywords": [
     "attr",
     "attribute",
@@ -38,18 +44,5 @@
     "tag",
     "template",
     "url"
-  ],
-  "main": "index.js",
-  "engines": {
-    "node": ">=0.10.0"
-  },
-  "scripts": {
-    "test": "mocha -R spec"
-  },
-  "devDependencies": {
-    "chai": "~1.9.1",
-    "mocha": "*",
-    "verb": "~0.2.6",
-    "verb-tag-jscomments": "^0.1.2"
-  }
+  ]
 }
