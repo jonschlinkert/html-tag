@@ -1,56 +1,43 @@
 /*!
  * html-tag <https://github.com/jonschlinkert/html-tag>
  *
- * Copyright (c) 2014-2015, Jon Schlinkert.
+ * Copyright (c) 2014-2015, 2017, Jon Schlinkert.
  * Licensed under the MIT License.
  */
 
 'use strict';
 
-/**
- * Expose `tag`
- */
+var isObject = require('isobject');
+var voidElements = require('void-elements');
 
-module.exports = tag;
+module.exports = function(tag, attribs, text) {
+  if (!isObject(attribs)) {
+    text = attribs;
+    attribs = {};
+  }
 
-/**
- * ## tag( name, attrs, text )
- *
- * Create a snippet of HTML.
- *
- * **Examples:**
- *
- * ```js
- * tag('a', {href: 'http://www.google.com'}, 'Google');
- * tag('img', {src: 'foo.jpg'});
- * ```
- *
- * yields:
- *
- * ```html
- * <a href="http://www.google.com">Google</a>
- * <img src="foo.jpg">
- * ```
- *
- * @param {String} `tag` The tag to create.
- * @param {Object} `attrs` Optional attributes
- * @param {String} `text` Optional text
- * @return {String} HTML
- * @api public
- */
+  if (typeof text === 'undefined') {
+    text = '';
+  }
 
-function tag(tag, attrs, text) {
+  if (typeof text !== 'string') {
+    throw new TypeError('expected text to be a string');
+  }
+
   var html = '<' + tag;
-
-  for (var i in attrs) {
-    if (attrs[i]) html += ' ' + i + '="' + attrs[i] + '"';
+  for (var key in attribs) {
+    var val = attribs[key];
+    if (val === true) {
+      html += ' ' + key;
+    }
+    if (typeof val === 'string') {
+      html += ' ' + key + '="' + val + '"';
+    }
   }
 
-  if (typeof text === 'boolean' && text === true) {
-    html += '></' + tag + '>';
-    return html;
+  if (voidElements.hasOwnProperty(tag)) {
+    return html + '>' + text;
   }
 
-  html += text ? '>' + text + '</' + tag + '>' : '>';
-  return html;
-}
+  return html + '>' + text + '</' + tag + '>';
+};
