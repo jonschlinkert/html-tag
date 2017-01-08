@@ -1,12 +1,9 @@
 {
   "name": "html-tag",
-  "description": "Generate HTML tags from JSON.",
-  "version": "0.2.2",
+  "description": "Generate HTML elements from a javascript object.",
+  "version": "1.0.0",
   "homepage": "https://github.com/jonschlinkert/html-tag",
-  "author": {
-    "name": "Jon Schlinkert",
-    "url": "https://github.com/jonschlinkert"
-  },
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "repository": "jonschlinkert/html-tag",
   "bugs": {
     "url": "https://github.com/jonschlinkert/html-tag/issues"
@@ -22,9 +19,13 @@
   "scripts": {
     "test": "mocha"
   },
+  "dependencies": {
+    "isobject": "^3.0.0",
+    "void-elements": "^2.0.1"
+  },
   "devDependencies": {
-    "chai": "~1.9.1",
-    "mocha": "*"
+    "gulp-format-md": "^0.1.11",
+    "mocha": "^3.2.0"
   },
   "keywords": [
     "attr",
@@ -44,5 +45,25 @@
     "tag",
     "template",
     "url"
-  ]
+  ],
+  "verb": {
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "lint": {
+      "reflinks": true
+    },
+    "related": {
+      "list": []
+    },
+    "reflinks": [
+      "verb",
+      "verb-generate-readme"
+    ]
+  }
 }
