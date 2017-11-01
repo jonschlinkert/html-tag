@@ -20,11 +20,11 @@
     "test": "mocha"
   },
   "dependencies": {
-    "isobject": "^3.0.0",
-    "void-elements": "^2.0.1"
+    "is-self-closing": "^1.0.1",
+    "kind-of": "^6.0.0"
   },
   "devDependencies": {
-    "gulp-format-md": "^0.1.11",
+    "gulp-format-md": "^1.0.0",
     "mocha": "^3.2.0"
   },
   "keywords": [
@@ -55,15 +55,17 @@
     "plugins": [
       "gulp-format-md"
     ],
+    "related": {
+      "list": [
+        "breakdance",
+        "html-toc",
+        "is-self-closing",
+        "remarkable",
+        "self-closing-tags"
+      ]
+    },
     "lint": {
       "reflinks": true
-    },
-    "related": {
-      "list": []
-    },
-    "reflinks": [
-      "verb",
-      "verb-generate-readme"
-    ]
+    }
   }
 }

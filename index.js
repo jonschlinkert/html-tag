@@ -1,22 +1,24 @@
 /*!
  * html-tag <https://github.com/jonschlinkert/html-tag>
  *
- * Copyright (c) 2014-2015, 2017, Jon Schlinkert.
- * Licensed under the MIT License.
+ * Copyright (c) 2014-2017, Jon Schlinkert.
+ * Released under the MIT License.
  */
 
 'use strict';
 
-var isObject = require('isobject');
-var voidElements = require('void-elements');
+var typeOf = require('kind-of');
+var isVoid = require('is-self-closing');
 
 module.exports = function(tag, attribs, text) {
-  if (!isObject(attribs)) {
+  var voided = text === false || attribs === false;
+
+  if (typeOf(attribs) !== 'object') {
     text = attribs;
     attribs = {};
   }
 
-  if (typeof text === 'undefined') {
+  if (typeof text === 'undefined' || text === false) {
     text = '';
   }
 
@@ -35,7 +37,7 @@ module.exports = function(tag, attribs, text) {
     }
   }
 
-  if (voidElements.hasOwnProperty(tag)) {
+  if (isVoid(tag) || voided === true) {
     return html + '>' + text;
   }
 
